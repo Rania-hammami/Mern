@@ -25,7 +25,7 @@ const upload = multer({ storage: storage });
 
 router.post('/', upload.array('images'), async (req, res) => {
     try {
-        console.log('Request Body:', req.body);
+        console.log('Request Body:', req.body);  
         console.log('Files:', req.files);
 
         let data = req.body;
@@ -43,6 +43,7 @@ router.post('/', upload.array('images'), async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
+
 
 // Route pour récupérer toutes les maisons
 router.get('/', async (req, res) => {
@@ -78,7 +79,7 @@ router.get('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
     try {
         const requiredFields = [
-            'titre', 'description', 'catégorie', 'prix', 'nomproprietaire',
+            'titre', 'description', 'categorie', 'prix', 'nomproprietaire',
             'emailproprietaire', 'numproprietaire', 'images', 'adresse',
             'gouvernorat', 'ville', 'surface', 'nb_chambre', 'nb_salon',
             'nb_salleDeBain', 'nb_etage', 'meublé', 'jardin', 'piscine',

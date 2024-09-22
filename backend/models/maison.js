@@ -13,9 +13,10 @@ const maisonSchema = new mongoose.Schema(
         type: String,
       },
 
-      catégorie:{
-        type:String,
-      },
+      categorie: {
+        type: String,
+    },
+    
   
       prix: {
         type: Number,
